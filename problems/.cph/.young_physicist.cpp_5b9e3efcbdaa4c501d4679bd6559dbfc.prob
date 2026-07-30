@@ -1,0 +1,1 @@
+{"name":"Local: young_physicist","url":"/home/shreeharsh157/Desktop/CompetitiveProgramming/problems/young_physicist.cpp","tests":[{"id":1785260547101,"input":"3\n4 1 7\n-2 4 -1\n1 -5 -3\n","output":"NO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/shreeharsh157/Desktop/CompetitiveProgramming/problems/young_physicist.cpp","group":"local","local":true}
