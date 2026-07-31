@@ -11,27 +11,32 @@ using ld = long double;
 
 void solve()
 {
-    ll n, k, b, s;
-    cin >> n >> k >> b >> s;
+    int n, x;
+    cin >> n >> x;
 
-    ll extra = s - b * k;
-    if (extra < 0 || extra > 1LL * n * (k - 1))
+    vector<int> a(n);
+    for (int i = 0; i < n; i++)
     {
-        cout << -1 << "\n";
-        return;
+        cin >> a[i];
     }
 
-    ll take = min(extra, k - 1);
-    cout << b * k + take << " ";
-    extra -= take;
+    int ans = 0;
+    ll L = a[0] - x;
+    ll R = a[0] + x;
 
     for (int i = 1; i < n; i++)
     {
-        take = min(extra, k - 1);
-        cout << take << " ";
-        extra -= take;
+        L = max(L, (ll)a[i] - x);
+        R = min(R, (ll)a[i] + x);
+
+        if (L > R)
+        {
+            ans++;
+            L = a[i] - x;
+            R = a[i] + x;
+        }
     }
-    cout << "\n";
+    cout << ans << "\n";
 }
 
 int main()
