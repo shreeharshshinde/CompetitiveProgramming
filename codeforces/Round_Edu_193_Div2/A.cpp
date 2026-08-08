@@ -16,17 +16,41 @@ using vll = vector<long long>;
 #define sz(x) (int)(x).size()
 #define pb push_back
 
-const int INF = 1e9 + 7;
-const long long INFL = 1e18 + 7;
-const int MOD = 1e9 + 7;
+const int MAXA = 200005;
+vector<bool> is_prime(MAXA, true);
+
+void sieve()
+{
+    is_prime[0] = is_prime[1] = false;
+    for (int p = 2; p * p < MAXA; p++)
+    {
+        if (is_prime[p])
+        {
+            for (int i = p * p; i < MAXA; i += p)
+                is_prime[i] = false;
+        }
+    }
+}
 
 void solve()
 {
+    int n;
+    cin >> n;
+
+    if (is_prime[n + 1])
+    {
+        cout << "YES\n";
+    }
+    else
+    {
+        cout << "NO\n";
+    }
 }
 
 int main()
 {
     fast;
+    sieve();
 
     int t = 1;
     cin >> t;
